@@ -1,0 +1,127 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer; 
+}
+
+#screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transform: scale(0.9);
+}
+
+#asciiLyric {
+    font-size: 8px;          
+    line-height: 9px;         
+    letter-spacing: 3px;      
+    font-weight: 900;         
+    white-space: pre;         
+    text-align: center;
+    /* Ditarik ke atas agar sangat rapat dengan gelombang */
+    margin-bottom: -115px;      
+    color: #ffffff;
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.8);
+    transform: scale(0.7); 
+    transform-origin: center center;
+}
+
+#spotifyUI {
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* Merapatkan jarak antar elemen di dalam UI Spotify */
+    gap: 10px; 
+}
+
+#waveform {
+    font-size: 10px;
+    line-height: 8px; 
+    letter-spacing: 1px;
+    color: #fff; 
+    margin-bottom: 0px;
+    white-space: pre;
+    font-weight: 900;
+    text-align: center;
+}
+
+#progressBar {
+    font-size: 10px;
+    line-height: 8px;
+    letter-spacing: 0px;
+    color: #fff;
+    margin-bottom: 5px;
+    white-space: pre;
+    font-weight: 900;
+    text-align: center;
+}
+
+#playbackControls {
+    display: block;
+    font-size: 8px;
+    line-height: 8px;
+    letter-spacing: 0px;
+    color: #fff;
+    white-space: pre;
+    text-align: center;
+    margin-top: -10px;
+    transform: scale(0.55);
+    transform-origin: center top;
+}
+
+/* --- TAHAP VIDEO ASCII BERWARNA --- */
+#videoStage {
+    display: none; 
+    /* PERBAIKAN: Paksa panggung video menutupi 100% layar penuh */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+    z-index: 5;
+}
+
+#videoAscii {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PERBAIKAN: Memaksa kanvas video membentang penuh (Cover) tanpa merusak rasio */
+#videoAscii canvas {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; 
+}
+
+#videoLyric {
+    position: absolute;
+    bottom: -145px; /* Posisi teks mengambang di atas dasar video */
+    left: 50%;
+    transform: translateX(-50%) scale(0.7); 
+    z-index: 10; 
+    
+    font-size: 8px;          
+    line-height: 9px;         
+    letter-spacing: 3px;      
+    font-weight: 900;         
+    white-space: pre;         
+    text-align: center;
+}

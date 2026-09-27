@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Dead ASCII VJ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="screen">
+        <div id="asciiLyric"></div>
+
+        <div id="spotifyUI">
+            <div id="waveform"></div>
+            <div id="progressBar"></div>
+            
+            <div id="playbackControls">
+                <span class="icon-green">~X~</span>
+                <span class="icon-gray">|&lt;&lt;</span>
+                <span class="icon-white icon-large">[ || ]</span>
+                <span class="icon-white">&gt;&gt;|</span>
+                <span class="icon-white">(o)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAHAP VIDEO: muncul setelah lirik terakhir selesai, videonya dikonversi ke ascii juga -->
+    <div id="videoStage">
+        <div id="videoAscii"></div>
+        <div id="videoLyric"></div>
+    </div>
+
+    <!-- TAHAP GAMBAR ASCII -->
+    <div id="imageStage" style="display: none; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #000; z-index: 6; overflow: hidden; justify-content: center; align-items: center;">
+        <div id="imageAscii" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+            <canvas id="imageCanvas" style="width: 100vw; height: 100vh; object-fit: cover;"></canvas>
+        </div>
+        <div id="imageLyric" style="position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%) scale(0.7); z-index: 10; font-size: 8px; line-height: 9px; letter-spacing: 3px; font-weight: 900; white-space: pre; text-align: center;"></div>
+    </div>
+
+    <!-- GANTI "video.mp4" DENGAN NAMA FILE VIDEO KAMU (taruh di folder yang sama) -->
+    <video id="bgVideo" src="video.mp4" muted playsinline style="display:none;"></video>
+
+    <audio id="myAudio" src="lagu.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
